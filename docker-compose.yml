@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  product-service:
+    container_name: product-service
+    build: ./product
+    restart: always
+    ports:
+      - 8888:80
+
+  website:
+    build: ./website
+    container_name: webserver
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./website/www/:/www-data/      
+    depends_on:
+      - product-service
