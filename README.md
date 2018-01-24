@@ -6,6 +6,12 @@ docker static website && docker golang service
 
 	$ docker-compose up
 
+	access http://localhost:8080
+
 ## Shutdown
 
 	$ docker-compose down
+
+## Clean docker images
+
+	$ ./clean.sh
